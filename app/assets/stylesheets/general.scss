@@ -1,5 +1,7 @@
 @import 'compass';
-
+html{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
 
 .text{
   font: 10px sans-serif;
@@ -40,5 +42,15 @@
     position:           absolute;
     border: 1px solid black;
     @include border-radius(1000px);
+  }
+}
+
+.candidates{
+  position:             absolute;
+  text-align:           right;
+  left:                 -90px;
+  height:               100%;
+  .candidate{
+    padding:            15px 0px;
   }
 }

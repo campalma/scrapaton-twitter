@@ -1,11 +1,38 @@
 #content_grap
   .exe_x
   .exe_y
-  -@tweets.each do |t|
+    .candidates
+      .candidate
+        Longueira
+      .candidate
+        Allamand
+      .candidate
+        Gomez
+      .candidate
+        Orrego
+      .candidate
+        Velasco
+      .candidate
+        Bachelet
 
+  -@tweets.each do |t|
     -time = t.created_at.to_i
     -left = (@a*time+@b).to_i
-    .circle{style: "left: #{left}px; top: 100px"}
+    -bottom=0
+    -if t.candidate== "bachelet"
+      -bottom = @bachelet
+    -if t.candidate== "velasco"
+      -bottom = @velasco
+    -if t.candidate== "orrego"
+      -bottom = @orrego
+    -if t.candidate== "gomez"
+      -bottom = @gomez
+    -if t.candidate== "allamand"
+      -bottom = @allamand
+    -if t.candidate== "longueira"
+      -bottom = @longueira
+
+    .circle{style: "left: #{left}px; bottom: #{bottom}px"}
 
 
 
