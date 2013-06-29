@@ -43,19 +43,39 @@ h2{
     height:             2px;
     width:              100%;
     background-color:   black;
+    padding-right:      11px;
 
     .labels{
       font-size:        0;
       position: absolute;
       left: 0;
       bottom: -4px;
+      .bar_grid{
+        width:            1px;
+        color:            gray;
+        bottom:           10px;
+        height:           440px;
+        background-color: rgb(134, 221, 255);
+        position:         absolute;
+        right:            -1px;
 
+      }
       .item{
         width:               70px;
         height:             10px;
         border-right:             1px solid gray;
+        position:       relative;
         @include box-sizing(border-box);
         @include inline-block;
+        .hour{
+          font-size:        10px;
+          font-weight: bold;
+          position: absolute;
+          right: -31px;
+          top: 14px;
+          text-align: center;
+          width: 60px;
+        }
       }
     }
 

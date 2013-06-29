@@ -1,13 +1,15 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.where(:candidate.ne => nil).sort(:created_at).limit(1000).all
+
+    @tweets = Tweet.where(:candidate.ne => nil, :positive.ne => nil).sort(:created_at).limit(100).all
+
     @groups = {}
 
     @tweets.each do |t|
-        if @groups[t.created_at.min.to_s+t.candidate].nil?
-            @groups[t.created_at.min.to_s+t.candidate] = []
+        if @groups[t.created_at.min.to_s+t.candidate+t.positive.to_s].nil?
+            @groups[t.created_at.min.to_s+t.candidate+t.positive.to_s] = [t]
         else
-            @groups[t.created_at.min.to_s+t.candidate] << t
+            @groups[t.created_at.min.to_s+t.candidate+t.positive.to_s] << t
         end
     end
 
@@ -23,7 +25,5 @@ class TweetsController < ApplicationController
     @gomez    = 150
     @allamand  = 310
     @longueira      = 375
-
-    awesome_print @groups.keys
   end
 end
