@@ -13,6 +13,21 @@ class TweetsController < ApplicationController
         end
     end
 
+    @gmin = 100000
+    @gmax = 0
+
+    @groups.each do |key, val|
+        if @gmax < val.count
+            @gmax = val.count
+        end
+        if @gmin > val.count
+            @gmin = val.count
+        end
+    end
+
+    puts @gmax
+    puts @gmin
+
     @min = @tweets.first.created_at.to_i
     @max = @tweets.last.created_at.to_i
     @diff= @max - @min
