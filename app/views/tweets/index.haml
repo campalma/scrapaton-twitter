@@ -45,9 +45,8 @@
       -bottom = @allamand
     -if t.candidate== "longueira"
       -bottom = @longueira
-
-    .circle{style: "left: #{left}px; bottom: #{bottom}px"}
-
+    -color = time%2==0 ? "positive" : "negative"
+    .circle{style: "left: #{left}px; bottom: #{bottom}px", class: color}
 
 
 

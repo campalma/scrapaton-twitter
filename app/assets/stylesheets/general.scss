@@ -2,6 +2,21 @@
 html{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+#header{
+  text-align:           center;
+
+}
+h1,h2,h3,h4{
+  margin: 0;
+}
+h2{
+  font-size:            18;
+  font-weight:          lighter;
+}
+.content_wrapper{
+  margin:             0 auto;
+  text-align:         center;
+}
 
 .text{
   font: 10px sans-serif;
@@ -11,13 +26,15 @@ html{
 #wrapper{
   width:                1000px;
   text-align:            center;
+  margin:               0 auto;
 }
 
 #content_grap{
   width:                700px;
-  height:               300px;
+  height:               450px;
   position:             relative;
   margin:               0 auto;
+  @include inline-block;
   .exe_x{
     position:           absolute;
     left:               0;
@@ -54,9 +71,14 @@ html{
   .circle{
     min-width:          20px;
     min-height:         20px;
-    background-color:   yellow;
     position:           absolute;
     @include border-radius(1000px);
+    &.positive{
+      background-color:   red;
+    }
+    &.negative{
+      background-color:   green;
+    }
   }
 }
 
@@ -70,7 +92,7 @@ html{
   .grid{
     border-bottom:        1px solid rgb(223, 223, 223);
     width:              100%;
-    height:             43px;
+    height:             65px;
     position:           relative;
     @include box-sizing(border-box);
     .name{
@@ -93,4 +115,12 @@ html{
       padding:          5px 0;
     }
   }
+}
+#populars{
+  @include inline-block;
+  @include box-sizing(border-box);
+  border:                2px solid black;
+  min-height:             200px;
+  width:                  200px;
+  margin-left:            60px;
 }

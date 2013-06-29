@@ -11,12 +11,12 @@ class TweetsController < ApplicationController
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
 
-    @bachelet   = 33
-    @velasco    = 76
+    @bachelet   = 50
+    @velasco    = 115
     @orrego     = 100
     @gomez    = 150
-    @allamand  = 205
-    @longueira      = 248
+    @allamand  = 310
+    @longueira      = 375
 
 
     puts @a
