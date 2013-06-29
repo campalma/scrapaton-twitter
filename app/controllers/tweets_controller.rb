@@ -16,5 +16,12 @@ class TweetsController < ApplicationController
     @diff= @max - @min
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
+
+    @bachelet   = 33
+    @velasco    = 76
+    @orrego     = 100
+    @gomez    = 150
+    @allamand  = 205
+    @longueira      = 248
   end
 end
