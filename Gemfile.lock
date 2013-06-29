@@ -73,7 +73,6 @@ GEM
       activesupport (~> 3.0)
       plucky (~> 0.5.2)
     multi_json (1.7.7)
-    pg (0.15.1)
     plucky (0.5.2)
       mongo (~> 1.5)
     polyglot (0.3.3)
@@ -135,7 +134,6 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   jquery-ui-rails
   mongo_mapper
-  pg
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
   sqlite3-ruby
