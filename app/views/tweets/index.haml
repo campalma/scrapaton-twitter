@@ -1,21 +1,13 @@
 #content_grap
   .exe_x
   .exe_y
-  -time = 10
-  =@diff
-  -left =(10*700/24).to_i
-  .circle{style: "left: #{left}px; top: 100px"}
+  -@tweets.each do |t|
+
+    -time = t.created_at.to_i
+    -left = (@a*time+@b).to_i
+    .circle{style: "left: #{left}px; top: 100px"}
 
 
--@tweets.each do |t|
-  =t.text
-  %br
-  =t.created_at
-  %br
-  =t.hashtags
-  %br
-  =t.mentions
-  %br
-  %br
+
 
 
