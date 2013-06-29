@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
-
-gem 'rails', '3.2.11'
+ruby '1.9.3'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
+
+group :production, :staging do
+  gem "pg"
+end
+
+group :development, :test do
+  gem "sqlite3-ruby", :require => "sqlite3"
+end
 
 
 # Gems used only for assets and not required
@@ -20,19 +28,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+# jquery
+gem "jquery-rails", "2.0.2"
+gem 'jquery-ui-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# haml gems
+gem 'haml', '~> 3.1.7'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'compass-rails'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem "awesome_print"
