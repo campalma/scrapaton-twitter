@@ -29,6 +29,7 @@
             ="Bachelet"
 
   -@groups.each do |key, group|
+    -puts group.count
     -t = group.first
     -unless t.nil?
       -time = t.created_at.to_i
@@ -47,7 +48,8 @@
       -if t.candidate== "longueira"
         -bottom = @longueira
       -color = time%2==0 ? "positive" : "negative"
-      .circle{style: "left: #{left}px; bottom: #{bottom}px", class: color}
+      -width= group.count
+      .circle{style: "left: #{left}px; bottom: #{bottom}px; width:#{width}px;height:#{width}px", class: color}
 
 
 

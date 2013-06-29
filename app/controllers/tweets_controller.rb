@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.where(:candidate.ne => nil).sort(:created_at).limit(100).all
+    @tweets = Tweet.where(:candidate.ne => nil).sort(:created_at).limit(1000).all
     @groups = {}
 
     @tweets.each do |t|
