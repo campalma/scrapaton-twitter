@@ -1,19 +1,33 @@
 #content_grap
   .exe_x
+    .labels
+      -(1..9).each do |c|
+        .item
   .exe_y
-    .candidates
-      .candidate
-        Longueira
-      .candidate
-        Allamand
-      .candidate
-        Gomez
-      .candidate
-        Orrego
-      .candidate
-        Velasco
-      .candidate
-        Bachelet
+  .candidates
+
+
+    -(0..6).each do |c|
+      .grid
+        -if c==0
+          .name
+            ="Longueira"
+        -if c==1
+          .name
+            ="Allamand"
+        -if c==2
+          .name
+            ="Gomez"
+        -if c==3
+          .name
+            ="Orrego"
+        -if c==4
+          .name
+            ="Velasco"
+        -if c==5
+          .name
+            ="Bachelet"
+
 
   -@tweets.each do |t|
     -time = t.created_at.to_i

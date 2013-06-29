@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.sort(:created_at).limit(100).all
+
+
+    @tweets = Tweet.where(:candidate.ne => nil).sort(:created_at).limit(100).all
     @min = @tweets.first.created_at.to_i
     @max = @tweets.last.created_at.to_i
     puts @min
@@ -9,12 +11,12 @@ class TweetsController < ApplicationController
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
 
-    @bachelet   = 28
-    @velasco    = 50
+    @bachelet   = 33
+    @velasco    = 76
     @orrego     = 100
     @gomez    = 150
-    @allamand  = 220
-    @longueira      = 268
+    @allamand  = 205
+    @longueira      = 248
 
 
     puts @a
