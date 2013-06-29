@@ -4,10 +4,10 @@ class TweetsController < ApplicationController
     @groups = {}
 
     @tweets.each do |t|
-        if @groups[t.created_at.min].nil?
-            @groups[t.created_at.min] = []
+        if @groups[t.created_at.min.to_s+t.candidate].nil?
+            @groups[t.created_at.min.to_s+t.candidate] = []
         else
-            @groups[t.created_at.min] << t
+            @groups[t.created_at.min.to_s+t.candidate] << t
         end
     end
 
@@ -23,5 +23,7 @@ class TweetsController < ApplicationController
     @gomez    = 150
     @allamand  = 205
     @longueira      = 248
+
+    awesome_print @groups.keys
   end
 end
