@@ -58,6 +58,12 @@ h2{
         background-color: rgb(134, 221, 255);
         position:         absolute;
         right:            -1px;
+        .name_grid{
+          color:          gray;
+          position:       relative;
+          top:            150px;
+          font-size:      22px;
+        }
 
       }
       .item{

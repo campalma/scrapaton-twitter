@@ -4,7 +4,7 @@ task tweets_collector: :environment do
 
   f = File.read("/Users/rudighertschalchli/Downloads/tweets_debate.json")
   json_tweets = JSON.parse(f)
-  tweets_group = json_tweets[0..100]
+  tweets_group = json_tweets
 
   tweets_group.each do |tweets|
     tweets = tweets["statuses"]

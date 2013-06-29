@@ -19,6 +19,8 @@ class TweetsController < ApplicationController
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
 
+
+
     @bachelet   = 50
     @velasco    = 115
     @orrego     = 100
