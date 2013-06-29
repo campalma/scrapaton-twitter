@@ -28,25 +28,26 @@
           .name
             ="Bachelet"
 
-
-  -@tweets.each do |t|
-    -time = t.created_at.to_i
-    -left = (@a*time+@b).to_i
-    -bottom=0
-    -if t.candidate== "bachelet"
-      -bottom = @bachelet
-    -if t.candidate== "velasco"
-      -bottom = @velasco
-    -if t.candidate== "orrego"
-      -bottom = @orrego
-    -if t.candidate== "gomez"
-      -bottom = @gomez
-    -if t.candidate== "allamand"
-      -bottom = @allamand
-    -if t.candidate== "longueira"
-      -bottom = @longueira
-    -color = time%2==0 ? "positive" : "negative"
-    .circle{style: "left: #{left}px; bottom: #{bottom}px", class: color}
+  -@groups.each do |key, group|
+    -t = group.first
+    -unless t.nil?
+      -time = t.created_at.to_i
+      -left = (@a*time+@b).to_i
+      -bottom=0
+      -if t.candidate== "bachelet"
+        -bottom = @bachelet
+      -if t.candidate== "velasco"
+        -bottom = @velasco
+      -if t.candidate== "orrego"
+        -bottom = @orrego
+      -if t.candidate== "gomez"
+        -bottom = @gomez
+      -if t.candidate== "allamand"
+        -bottom = @allamand
+      -if t.candidate== "longueira"
+        -bottom = @longueira
+      -color = time%2==0 ? "positive" : "negative"
+      .circle{style: "left: #{left}px; bottom: #{bottom}px", class: color}
 
 
 
