@@ -2,32 +2,35 @@
   .exe_x
     .labels
 
+      -t=(@max-@min)/10
       -(0..9).each do |c|
         .item
           .bar_grid
             .name_grid
-              nombre
+              -if c==0
+                Unidad
+              -if c==1
+                11-sept
+              -if c==2
+                Asamblea
+              -if c==3
+                Empleo
+              -if c==4
+                Prevision
+              -if c==5
+                F. Berrios
+              -if c==6
+                Conflictos
+              -if c==7
+                Rechazo L.
+              -if c==8
+                Matrimonio
+              -if c==9
+                AVP
+
           %span.hour
-            -if c==0
-              00:06
-            -if c==1
-              00:12
-            -if c==2
-              00:18
-            -if c==3
-              00:24
-            -if c==4
-              00:30
-            -if c==5
-              00:36
-            -if c==6
-              00:42
-            -if c==7
-              00:48
-            -if c==8
-              00:54
-            -if c==9
-              00:60
+            ="00:#{Time.at(@min+(t*c)).min}"
+
   .exe_y
   .candidates
 
@@ -72,8 +75,10 @@
       -if t.candidate== "longueira"
         -bottom = @longueira
       -color = t.positive ? "positive" : "negative"
-      -width= group.count
+      -width= (@ga*group.count+@gb).to_i
+
       .circle{style: "left: #{left}px; bottom: #{bottom}px; width:#{width}px;height:#{width}px", class: color}
+=image_tag 'manitos.png', class: "manitos"
 
 
 

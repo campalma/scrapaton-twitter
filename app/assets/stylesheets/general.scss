@@ -64,6 +64,7 @@ h2{
           top:            250px;
           font-size:      22px;
           left:           -33px;
+          text-align:     right;
           @include rotate(-90deg);
         }
 
@@ -156,4 +157,10 @@ h2{
   min-height:             200px;
   width:                  200px;
   margin-left:            60px;
+}
+.manitos{
+  margin-left:          50px;
+}
+.logo{
+  width:                200px;
 }
