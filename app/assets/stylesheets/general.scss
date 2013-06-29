@@ -1,7 +1,4 @@
-html{
-  background-color:   white;
-  margin:             0;
-}
+@import 'compass';
 
 .circle{
   fill: rgb(31, 119, 180);
@@ -15,6 +12,44 @@ html{
   fill-opacity: 1;
 }
 
-text {
+.text{
   font: 10px sans-serif;
+  background-color: white;
+}
+
+#wrapper{
+  width:                1000px;
+  text-align:            center;
+}
+
+#content_grap{
+  width:                700px;
+  height:               300px;
+  position:             relative;
+  margin:               0 auto;
+  .exe_x{
+    position:           absolute;
+    left:               0;
+    bottom:             -3px;
+    height:             6px;
+    width:              100%;
+    background-color: green;
+  }
+  .exe_y{
+    position:           absolute;
+    left:               0;
+    top:                0;
+    height:             100%;
+    width:              6px;
+    background-color: red;
+  }
+
+  .circle{
+    min-width:          10px;
+    min-height:         10px;
+    background-color:   yellow;
+    position:           absolute;
+    border: 1px solid black;
+    @include border-radius(1000px);
+  }
 }
