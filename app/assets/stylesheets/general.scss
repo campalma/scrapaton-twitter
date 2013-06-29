@@ -59,10 +59,12 @@ h2{
         position:         absolute;
         right:            -1px;
         .name_grid{
-          color:          gray;
+          color:          rgb(211, 211, 211);
           position:       relative;
-          top:            150px;
+          top:            250px;
           font-size:      22px;
+          left:           -33px;
+          @include rotate(-90deg);
         }
 
       }
