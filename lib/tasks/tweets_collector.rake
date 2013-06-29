@@ -10,6 +10,6 @@ task tweets_collector: :environment do
     mentions = t["entities"]["user_mentions"].collect do |m|
       m["screen_name"]
     end
-    Tweet.create(text: t["text"], username: t["user"]["screen_name"], mentions: mentions, hashtags: hashtags)
+    Tweet.create(text: t["text"], username: t["user"]["screen_name"], mentions: mentions, hashtags: hashtags, created_at: t["created_at"])
   end
 end
