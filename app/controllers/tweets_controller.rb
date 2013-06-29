@@ -1,4 +1,4 @@
-class TweetsController < ActionController::Base
+class TweetsController < ApplicationController
   def index
 
   end

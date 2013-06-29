@@ -38,3 +38,5 @@ gem 'haml', '~> 3.1.7'
 gem 'compass-rails'
 
 gem "awesome_print"
+
+gem "mongo_mapper"

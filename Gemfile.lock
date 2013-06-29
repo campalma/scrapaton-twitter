@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     awesome_print (1.1.0)
+    bson (1.9.0)
     builder (3.0.4)
     chunky_png (1.2.8)
     coffee-rails (3.2.2)
@@ -65,8 +66,16 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
+    mongo (1.9.0)
+      bson (~> 1.9.0)
+    mongo_mapper (0.12.0)
+      activemodel (~> 3.0)
+      activesupport (~> 3.0)
+      plucky (~> 0.5.2)
     multi_json (1.7.7)
     pg (0.15.1)
+    plucky (0.5.2)
+      mongo (~> 1.5)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -125,6 +134,7 @@ DEPENDENCIES
   haml (~> 3.1.7)
   jquery-rails (= 2.0.2)
   jquery-ui-rails
+  mongo_mapper
   pg
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
