@@ -35,8 +35,8 @@ class TweetsController < ApplicationController
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
 
-    @ga=100.0/@gdiff
-    @gb=-100*@gmin/@gdiff
+    @ga=80.0/@gdiff
+    @gb=20-(100*@gmin/@gdiff)
 
 
 

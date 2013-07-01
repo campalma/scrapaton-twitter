@@ -21,7 +21,7 @@
                 Regionalización
 
           %span.hour
-            ="#{Time.at(@min+(t*c)).hour}:#{Time.at(@min+(t*c)).min}"
+            ="#{Time.at(@min+(t*c)).hour}:#{"%02d" % Time.at(@min+(t*c)).min}"
 
   .exe_y
   .candidates
