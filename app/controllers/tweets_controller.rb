@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def index
 
-    @tweets = Rails.cache.fetch("tweets") do
+    @tweets = Rails.cache.fetch("tweets", expires_in: 1.year) do
         Tweet.fields(:created_at, :positive, :candidate).where(:candidate.ne => nil, :positive.ne => nil).sort(:created_at).all
     end
 
