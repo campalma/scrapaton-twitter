@@ -1,7 +1,9 @@
 class TweetsController < ApplicationController
   def index
 
-    @tweets = Tweet.fields(:created_at, :positive, :candidate).where(:candidate.ne => nil, :positive.ne => nil).sort(:created_at).all
+    @tweets = Rails.cache.fetch("tweets") do
+        Tweet.fields(:created_at, :positive, :candidate).where(:candidate.ne => nil, :positive.ne => nil).sort(:created_at).all
+    end
 
     @groups = {}
 
