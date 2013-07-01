@@ -2,7 +2,7 @@ desc "Tweets Collector"
 task tweets_collector: :environment do
 
 
-  f = File.read("/Users/rudighertschalchli/Downloads/tweets_debate.json")
+  f = File.read("/Users/camilo/Downloads/debate_derecha/tweets_debate.json")
   json_tweets = JSON.parse(f)
   tweets_group = json_tweets
 

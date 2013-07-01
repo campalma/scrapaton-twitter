@@ -42,7 +42,7 @@ class TweetsController < ApplicationController
 
     @bachelet   = 50
     @velasco    = 115
-    @orrego     = 100
+    @orrego     = 180
     @gomez    = 150
     @allamand  = 310
     @longueira      = 375
