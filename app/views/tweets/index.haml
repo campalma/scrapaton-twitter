@@ -66,6 +66,8 @@
         -bottom = @allamand
       -if t.candidate== "longueira"
         -bottom = @longueira
+        -if t.positive
+          -awesome_print group
       -color = t.positive ? "positive" : "negative"
       -width= (@ga*group.count+@gb).to_i
 

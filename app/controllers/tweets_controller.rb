@@ -32,11 +32,11 @@ class TweetsController < ApplicationController
     @max = @tweets.last.created_at.to_i
     @diff= @max - @min
     @a = 700.0/@diff
-    @b = -700*@min/(@diff)
+    @b = -700.0*@min/(@diff)
 
     @gdiff = @gmax - @gmin
     @ga = 80.0/@gdiff
-    @gb = 20 - (100*@gmin/@gdiff)
+    @gb = 20 - (80.0*@gmin/@gdiff)
 
     @bachelet   = 50
     @velasco    = 115
