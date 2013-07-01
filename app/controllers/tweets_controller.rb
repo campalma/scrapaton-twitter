@@ -8,10 +8,11 @@ class TweetsController < ApplicationController
     @groups = {}
 
     @tweets.each do |t|
-        if @groups[t.created_at.hour.to_s+t.created_at.min.to_s+t.candidate+t.positive.to_s].nil?
-            @groups[t.created_at.hour.to_s+t.created_at.min.to_s+t.candidate+t.positive.to_s] = [t]
+        group_key = t.group_key
+        if @groups[group_key].nil?
+            @groups[group_key] = [t]
         else
-            @groups[t.created_at.hour.to_s+t.created_at.min.to_s+t.candidate+t.positive.to_s] << t
+            @groups[group_key] << t
         end
     end
 
@@ -27,26 +28,21 @@ class TweetsController < ApplicationController
         end
     end
 
-    puts @gmax
-    puts @gmin
-
     @min = @tweets.first.created_at.to_i
     @max = @tweets.last.created_at.to_i
     @diff= @max - @min
-    @gdiff=@gmax-@gmin
     @a = 700.0/@diff
     @b = -700*@min/(@diff)
 
-    @ga=80.0/@gdiff
-    @gb=20-(100*@gmin/@gdiff)
-
-
+    @gdiff = @gmax - @gmin
+    @ga = 80.0/@gdiff
+    @gb = 20 - (100*@gmin/@gdiff)
 
     @bachelet   = 50
     @velasco    = 115
     @orrego     = 180
-    @gomez    = 150
-    @allamand  = 310
-    @longueira      = 375
+    @gomez      = 245
+    @allamand   = 310
+    @longueira  = 375
   end
 end

@@ -133,10 +133,19 @@ class Tweet
 
     POSITIVE.each do |p|
       if formatted_text.include? p.downcase.mb_chars.normalize(:kd).gsub(/[^x00-\x7F]/n, '').to_s
+        puts p
         return true
       end
     end
     return nil
+  end
+
+  def group_key
+    if self.created_at.min % 2 == 0
+      self.created_at.hour.to_s+self.created_at.min.to_s+self.candidate+self.positive.to_s
+    else
+      self.created_at.hour.to_s+(self.created_at.min-1).to_s+self.candidate+self.positive.to_s
+    end
   end
 
 end

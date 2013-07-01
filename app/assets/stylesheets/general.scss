@@ -61,7 +61,7 @@ h2{
         .name_grid{
           color:          rgb(211, 211, 211);
           position:       relative;
-          top:            250px;
+          top:            280px;
           font-size:      22px;
           left:           -33px;
           text-align:     right;
@@ -108,10 +108,12 @@ h2{
     opacity:            0.75;
     @include border-radius(1000px);
     &.positive{
-      background-color:   #ff533f;
+      background-color:   #48d9ca;
+
     }
     &.negative{
-      background-color:   #48d9ca;
+      background-color:   #ff533f;
+      z-index: 10;
     }
   }
 }
